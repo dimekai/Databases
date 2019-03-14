@@ -1,20 +1,29 @@
 1. El nombre de la sucursal y los nombres asignados
+
 2 Mostrar el nombre y correo electrónico de los socios,
 ademas de mostrar la sucursal donde estan dados de alta
+
 3. El nombre de los socios, su monto de credito
 y la tarjeta que tienen asignada.
+
 4. Mostrar el departamento que tienen las 
 sucursales existentes en el estado de chihuahua
+
 5. Mostrar el nombre de la sucursal y los 
-empleados que tienene, para aquellas sucursales que
+empleados que tienen, para aquellas sucursales que
 tienen los siguientes cp. 64830,53569 y 89360
+
 6. Cual es la sucursal donde se encuentras asignados
 los socios que se apellidan GONZALEZ.
+
 7. Cuantos socios se apellidan GARCIA
+
 8. Cuantas sucursales existen en los estados?
+
 9. En cuales sucursales existen el departamento
 de pisos.
-10. Como se llaman las asociadas y en que sucursal
+
+10. Como se llaman los asociados y en que sucursal
 se ubican, anexar el estado de dichas sucursales.
 __________________
 Atributo de reunion (reunion)
@@ -26,26 +35,34 @@ Atributo de reunion (reunion)
 	Relacion.Campo
 	(Alias)->referencia a esa relación
 SOL.
-1. SELECT h.nombre, a.nombre
+1. El nombre de la sucursal y los nombres asignados 
+
+SELECT h.nombre, a.nombre
 FROM homedepot h, asociado a    //Alias
 WHERE h.idhd=a.homedepot_idhd  //Operacion de reunion
 								concuerdan (match) si no se pone es P.Cartesi
 ORDER BY h.nombre, a.nombre  DESC;
 
-2.
+2 Mostrar el nombre y correo electrónico de los socios,
+ademas de mostrar la sucursal donde estan dados de alta
+
 	SELECT s.nombre, s.email, h.nombre
 	FROM socio s, homedepot h, hdsocio x
 	WHERE s.idsocio =x.socio_idsocio
 	AND x.homedepot_idhd= h.idhd
 	ORDER BY h.nombre, s.nombre
 
-3.
+3. El nombre de los socios, su monto de credito
+y la tarjeta que tienen asignada.
+
 	SELECT s.nombre, s.credito, t.nombre  ->Operacion de proyeccion
 	FROM socio s, tarjeta t				  ->Producto Cartesiano
 	WHERE t.socio_idsocio=s.idsocio		  ->Reunion
 	ORDER BY 3,1;					//Tercer columna, 1 columna
 
-4.	
+4. Mostrar el departamento que tienen las 
+sucursales existentes en el estado de chihuahua
+
 	SELECT h.nombre, d.nombre,h.estado
 	FROM homedepot h, depto d, hddepto t
 	WHERE h.idhd=t.homedepot_idhd
@@ -53,7 +70,10 @@ ORDER BY h.nombre, a.nombre  DESC;
 	AND h.estado like "Chihu%"
 	ORDER BY 1,2;
 	
-5. 
+5. Mostrar el nombre de la sucursal y los 
+empleados que tienene, para aquellas sucursales que
+tienen los siguientes cp. 64830,53569 y 89360
+
 	SELECT a.nombre, h.idhd, h.nombre
 	FROM asociado a, homedepot h
 	WHERE a.homedepot_idhd=h.idhd
@@ -62,7 +82,9 @@ ORDER BY h.nombre, a.nombre  DESC;
 	OR h.direccion like "%89360"
 	ORDER BY 2,1;
 
-6. 
+6. Cual es la sucursal donde se encuentran asignados
+los socios que se apellidan GONZALEZ.
+
 	SELECT s.nombre,h.nombre
 	FROM homedepot h, hdsocio hs, socio s
 	WHERE h.idhd = hs.homedepot_idhd
@@ -72,7 +94,8 @@ ORDER BY h.nombre, a.nombre  DESC;
 	
 	--Si no hay parentesis, se cicla
 	
-7.
+7. Cuantos socios se apellidan GARCIA
+
 	SELECT count(*) FROM socio
 	WHERE nombre like "GARCIA%"
 	OR nombre like "%GARCI%";
@@ -95,12 +118,15 @@ ORDER BY h.nombre, a.nombre  DESC;
 				SELECT estado FROM homedepot	//LECTURA DE INDICES(MAS RAPIDO)
 				GROUP BY estado;
 
-8.
+8. Cuantas sucursales existen en los estados?
+
 	SELECT nombre, count(*)
 	FROM homedepot
 	GROUP BY nombre;
 
-9.
+9. En cuales sucursales existen el departamento
+de pisos.
+
 	SELECT h.nombre 
 	FROM homedepot h, hddepto x, depto d
 	WHERE h.idhd = x.homedepot_idhd
@@ -119,7 +145,10 @@ ORDER BY h.nombre, a.nombre  DESC;
 	AND x.depto_iddepto=d.iddepto
 	AND d.nombre = "TECHOS";
 	
-10.
+10. Como se llaman los asociados y en que sucursal
+se ubican, anexar el estado de dichas sucursales.
+los socios que sean mujeres.	
+
 	SELECT a.nombre, h.nombre, h.estado
 	FROM asociado a, homedepot h
 	WHERE a.homedepot_idhd = h.idhd
