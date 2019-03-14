@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc4 {
+	color: #FF8000;
+}
+.sc5 {
+	font-weight: bold;
+	color: #0000FF;
+}
+.sc10 {
+	font-weight: bold;
+	color: #000080;
+}
+.sc11 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc11">Empleado</span><span class="sc10">(</span><span class="sc0">
+    </span><span class="sc11">idEmpleado</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">nombre</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">dir</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">tel</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">genero</span><span class="sc10">)</span><span class="sc0">
+
+</span><span class="sc11">EC</span><span class="sc10">(</span><span class="sc0">
+    </span><span class="sc11">idEmpleado</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">idCinemex</span><span class="sc0"> </span><span class="sc10">)</span><span class="sc0">
+
+</span><span class="sc11">Cinemex</span><span class="sc10">(</span><span class="sc0">
+    </span><span class="sc11">idCinemex</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">nombre</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">dir</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">tel</span><span class="sc10">)</span><span class="sc0">
+    
+</span><span class="sc11">______________</span><span class="sc0">
+    
+</span><span class="sc4">1.</span><span class="sc0"> </span><span class="sc11">Crear</span><span class="sc0"> </span><span class="sc11">una</span><span class="sc0"> </span><span class="sc11">base</span><span class="sc0"> </span><span class="sc11">de</span><span class="sc0"> </span><span class="sc11">Datos</span><span class="sc0">
+
+    </span><span class="sc5">create</span><span class="sc0"> </span><span class="sc11">database</span><span class="sc0"> </span><span class="sc11">cine</span><span class="sc10">;</span><span class="sc0">
+    
+</span><span class="sc4">2.</span><span class="sc0"> </span><span class="sc11">Crear</span><span class="sc0"> </span><span class="sc11">las</span><span class="sc0"> </span><span class="sc11">relaciones</span><span class="sc0"> </span><span class="sc11">propietarias</span><span class="sc10">.....</span><span class="sc11">miembro</span><span class="sc0">
+    
+    </span><span class="sc5">create</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">empleado</span><span class="sc10">(</span><span class="sc0">
+        </span><span class="sc11">idEmpleado</span><span class="sc0"> </span><span class="sc5">int</span><span class="sc0"> </span><span class="sc5">not</span><span class="sc0"> </span><span class="sc5">null</span><span class="sc0"> </span><span class="sc5">primary</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">,</span><span class="sc0">
+        </span><span class="sc11">nombre</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">30</span><span class="sc10">),</span><span class="sc0">
+        </span><span class="sc11">dir</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">100</span><span class="sc10">),</span><span class="sc0">
+        </span><span class="sc11">tel</span><span class="sc0"> </span><span class="sc5">int</span><span class="sc10">,</span><span class="sc0">
+        </span><span class="sc11">genero</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">10</span><span class="sc10">)</span><span class="sc0">
+    </span><span class="sc10">);</span><span class="sc0">
+    
+    </span><span class="sc5">create</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">cinemex</span><span class="sc10">(</span><span class="sc0">
+    </span><span class="sc11">idCinemex</span><span class="sc0"> </span><span class="sc5">int</span><span class="sc0"> </span><span class="sc5">not</span><span class="sc0"> </span><span class="sc5">null</span><span class="sc0"> </span><span class="sc5">primary</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">nombre</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">50</span><span class="sc10">),</span><span class="sc0">
+    </span><span class="sc11">dir</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">100</span><span class="sc10">),</span><span class="sc0">
+    </span><span class="sc11">tel</span><span class="sc0"> </span><span class="sc5">int</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">email</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">60</span><span class="sc10">)</span><span class="sc0">
+    </span><span class="sc10">);</span><span class="sc0">
+    
+</span><span class="sc11">Crear</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">relacion</span><span class="sc0"> </span><span class="sc11">miembro</span><span class="sc0">
+
+    </span><span class="sc5">create</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">ec</span><span class="sc10">(</span><span class="sc0">
+        </span><span class="sc11">idEmpleado</span><span class="sc0"> </span><span class="sc5">int</span><span class="sc0"> </span><span class="sc5">not</span><span class="sc0"> </span><span class="sc5">null</span><span class="sc10">,</span><span class="sc0">
+        </span><span class="sc11">idCinemex</span><span class="sc0"> </span><span class="sc5">int</span><span class="sc0"> </span><span class="sc5">not</span><span class="sc0"> </span><span class="sc5">null</span><span class="sc10">,</span><span class="sc0">
+        </span><span class="sc5">primary</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">(</span><span class="sc11">idEmpleado</span><span class="sc10">,</span><span class="sc11">idCinemex</span><span class="sc10">),</span><span class="sc0">
+        
+        </span><span class="sc5">foreign</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc0"> </span><span class="sc10">(</span><span class="sc11">idEmpleado</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc5">references</span><span class="sc0"> </span><span class="sc11">Empleado</span><span class="sc10">(</span><span class="sc11">idEmpleado</span><span class="sc10">)</span><span class="sc0">
+        </span><span class="sc5">on</span><span class="sc0"> </span><span class="sc5">delete</span><span class="sc0"> </span><span class="sc5">cascade</span><span class="sc0"> </span><span class="sc5">on</span><span class="sc0"> </span><span class="sc5">update</span><span class="sc0"> </span><span class="sc5">cascade</span><span class="sc10">,</span><span class="sc0">
+        </span><span class="sc5">foreign</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">(</span><span class="sc11">idCinemex</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc5">references</span><span class="sc0"> </span><span class="sc11">Cinemex</span><span class="sc10">(</span><span class="sc11">idCinemex</span><span class="sc10">)</span><span class="sc0">
+        </span><span class="sc5">on</span><span class="sc0"> </span><span class="sc5">delete</span><span class="sc0"> </span><span class="sc5">cascade</span><span class="sc0"> </span><span class="sc5">on</span><span class="sc0"> </span><span class="sc5">update</span><span class="sc0"> </span><span class="sc5">cascade</span><span class="sc0">
+    </span><span class="sc10">);</span><span class="sc0">
+
+</span><span class="sc11">______________</span><span class="sc0">
+</span><span class="sc11">PARA</span><span class="sc0"> </span><span class="sc11">CAMBIAR</span><span class="sc0"> </span><span class="sc11">LA</span><span class="sc0"> </span><span class="sc11">OPCION</span><span class="sc0"> </span><span class="sc11">DE</span><span class="sc0"> </span><span class="sc11">LA</span><span class="sc0"> </span><span class="sc11">TABLA</span><span class="sc0">
+    </span><span class="sc11">ENGINE</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc11">InnoDB</span><span class="sc0">
+    
+    </span><span class="sc4">1.</span><span class="sc0"> </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">______________</span><span class="sc0">
+    </span><span class="sc4">2.</span><span class="sc0"> </span><span class="sc11">ENGINE</span><span class="sc0"> </span><span class="sc10">=</span><span class="sc0"> </span><span class="sc11">InnoDB</span><span class="sc10">;</span><span class="sc0">
+
+    </span><span class="sc5">No</span><span class="sc0"> </span><span class="sc11">hacer</span><span class="sc10">.</span><span class="sc0">
+</span><span class="sc11">______________</span><span class="sc0">
+
+</span><span class="sc4">3.</span><span class="sc0"> </span><span class="sc11">Agregar</span><span class="sc0"> </span><span class="sc11">dos</span><span class="sc0"> </span><span class="sc11">campos</span><span class="sc0"> </span><span class="sc11">que</span><span class="sc0"> </span><span class="sc11">permitan</span><span class="sc0"> </span><span class="sc11">almacenar</span><span class="sc0"> </span><span class="sc11">el</span><span class="sc0"> </span><span class="sc11">salario</span><span class="sc0"> </span><span class="sc11">y</span><span class="sc0"> </span><span class="sc11">el</span><span class="sc0"> </span><span class="sc11">correo</span><span class="sc0"> </span><span class="sc11">electronico</span><span class="sc0">
+</span><span class="sc11">en</span><span class="sc0"> </span><span class="sc11">los</span><span class="sc0"> </span><span class="sc11">empleados</span><span class="sc10">.</span><span class="sc0">
+
+    </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">empleado</span><span class="sc0"> </span><span class="sc5">add</span><span class="sc0"> </span><span class="sc5">column</span><span class="sc0"> </span><span class="sc11">salario</span><span class="sc0"> </span><span class="sc5">double</span><span class="sc10">;</span><span class="sc0">
+    </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">empleado</span><span class="sc0"> </span><span class="sc5">add</span><span class="sc0"> </span><span class="sc5">column</span><span class="sc0"> </span><span class="sc11">email</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">60</span><span class="sc10">);</span><span class="sc0">
+    
+    </span><span class="sc11">Verificar</span><span class="sc10">:</span><span class="sc0"> </span><span class="sc5">desc</span><span class="sc0"> </span><span class="sc11">empleado</span><span class="sc10">;</span><span class="sc0">
+
+</span><span class="sc4">4.</span><span class="sc0"> </span><span class="sc11">Crear</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">relacion</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc0">
+    
+    </span><span class="sc11">Gerente</span><span class="sc10">(</span><span class="sc0"> </span><span class="sc11">idGerente</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">nombre</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">turno</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">nocel</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">salario</span><span class="sc10">)</span><span class="sc0">
+    
+    </span><span class="sc11">Y</span><span class="sc0"> </span><span class="sc11">ademas</span><span class="sc0"> </span><span class="sc11">vamos</span><span class="sc0"> </span><span class="sc11">a</span><span class="sc0"> </span><span class="sc11">tener</span><span class="sc0"> </span><span class="sc11">una</span><span class="sc0"> </span><span class="sc11">llave</span><span class="sc0"> </span><span class="sc11">forantea</span><span class="sc0">  </span><span class="sc11">FK</span><span class="sc10">(</span><span class="sc11">idCinemex</span><span class="sc10">)</span><span class="sc0">
+    
+    </span><span class="sc5">create</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc10">(</span><span class="sc0">
+    </span><span class="sc11">idGerente</span><span class="sc0"> </span><span class="sc5">int</span><span class="sc0"> </span><span class="sc5">not</span><span class="sc0"> </span><span class="sc5">null</span><span class="sc0"> </span><span class="sc5">primary</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">nombre</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">50</span><span class="sc10">),</span><span class="sc0">
+    </span><span class="sc11">turno</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">15</span><span class="sc10">),</span><span class="sc0">
+    </span><span class="sc11">nocel</span><span class="sc0"> </span><span class="sc5">int</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc11">salario</span><span class="sc0"> </span><span class="sc5">double</span><span class="sc10">,</span><span class="sc0">
+    
+    </span><span class="sc11">idCinemex</span><span class="sc0"> </span><span class="sc5">int</span><span class="sc10">,</span><span class="sc0">
+    </span><span class="sc5">foreign</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">(</span><span class="sc11">idCinemex</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc5">references</span><span class="sc0"> </span><span class="sc11">cinemex</span><span class="sc10">(</span><span class="sc11">idCinemex</span><span class="sc10">)</span><span class="sc0"> 
+    </span><span class="sc5">on</span><span class="sc0"> </span><span class="sc5">delete</span><span class="sc0"> </span><span class="sc5">cascade</span><span class="sc0"> </span><span class="sc5">on</span><span class="sc0"> </span><span class="sc5">update</span><span class="sc0"> </span><span class="sc5">cascade</span><span class="sc0">
+    </span><span class="sc10">);</span><span class="sc0">
+    
+    </span><span class="sc11">Verificar</span><span class="sc10">:</span><span class="sc0">  </span><span class="sc5">desc</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc10">;</span><span class="sc0">
+                </span><span class="sc11">show</span><span class="sc0"> </span><span class="sc5">create</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc10">;</span><span class="sc0">
+                
+</span><span class="sc4">5.</span><span class="sc0"> </span><span class="sc11">Cambiar</span><span class="sc0"> </span><span class="sc11">el</span><span class="sc0"> </span><span class="sc11">tipo</span><span class="sc0"> </span><span class="sc11">de</span><span class="sc0"> </span><span class="sc11">dato</span><span class="sc0"> </span><span class="sc11">del</span><span class="sc0"> </span><span class="sc11">nocel</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc0"> </span><span class="sc11">a</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc0">
+
+    </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc0"> </span><span class="sc5">MODIFY</span><span class="sc0"> </span><span class="sc5">COLUMN</span><span class="sc0"> </span><span class="sc11">nocel</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">15</span><span class="sc10">);</span><span class="sc0">
+    
+    </span><span class="sc11">Verificar</span><span class="sc10">:</span><span class="sc0">  </span><span class="sc5">desc</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc10">;</span><span class="sc0">
+    
+</span><span class="sc4">6.</span><span class="sc0"> </span><span class="sc11">Renombar</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">relacion</span><span class="sc0"> </span><span class="sc11">empleado</span><span class="sc0"> </span><span class="sc11">y</span><span class="sc0"> </span><span class="sc11">llamarle</span><span class="sc0"> </span><span class="sc11">Asociado</span><span class="sc0">
+
+    </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">empleado</span><span class="sc0"> </span><span class="sc5">rename</span><span class="sc0"> </span><span class="sc5">as</span><span class="sc0"> </span><span class="sc11">Asociado</span><span class="sc10">;</span><span class="sc0">
+    
+    </span><span class="sc11">Verificar</span><span class="sc10">:</span><span class="sc0">  </span><span class="sc5">desc</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc10">;</span><span class="sc0">
+    
+</span><span class="sc4">7.</span><span class="sc0"> </span><span class="sc11">Aumentar</span><span class="sc0"> </span><span class="sc11">el</span><span class="sc0"> </span><span class="sc11">tama</span><span class="sc0">ñ</span><span class="sc11">o</span><span class="sc0"> </span><span class="sc11">de</span><span class="sc0"> </span><span class="sc11">tipo</span><span class="sc0"> </span><span class="sc11">de</span><span class="sc0"> </span><span class="sc11">dato</span><span class="sc0"> </span><span class="sc11">de</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">dir</span><span class="sc0"> </span><span class="sc11">de</span><span class="sc0"> </span><span class="sc11">asociado</span><span class="sc0">
+
+    </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">Asociado</span><span class="sc0"> </span><span class="sc5">modify</span><span class="sc0"> </span><span class="sc5">column</span><span class="sc0"> </span><span class="sc11">dir</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">200</span><span class="sc10">);</span><span class="sc0">
+    
+    </span><span class="sc11">Verificar</span><span class="sc10">:</span><span class="sc0">  </span><span class="sc5">desc</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc10">;</span><span class="sc0">
+    
+</span><span class="sc4">8.</span><span class="sc0"> 
+    </span><span class="sc4">1</span><span class="sc0">  </span><span class="sc11">Eliminar</span><span class="sc0"> </span><span class="sc11">llave</span><span class="sc0"> </span><span class="sc5">primary</span><span class="sc0"> </span><span class="sc11">pero</span><span class="sc0"> </span><span class="sc11">primero</span><span class="sc0"> </span><span class="sc11">correspondientes</span><span class="sc0"> </span><span class="sc11">a</span><span class="sc0"> </span><span class="sc11">las</span><span class="sc0"> </span><span class="sc11">intermedias</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">las</span><span class="sc0"> </span><span class="sc5">foreign</span><span class="sc0">
+    </span><span class="sc4">2.</span><span class="sc0"> </span><span class="sc11">REDEFINIR</span><span class="sc0"> </span><span class="sc11">las</span><span class="sc0"> </span><span class="sc11">llaves</span><span class="sc0"> </span><span class="sc11">primarias</span><span class="sc0">
+    </span><span class="sc4">3.</span><span class="sc0"> </span><span class="sc11">Asociarlo</span><span class="sc0"> </span><span class="sc11">con</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc0">
+    
+    </span><span class="sc4">8.1</span><span class="sc0"> </span><span class="sc11">Eliminar</span><span class="sc0"> </span><span class="sc11">PK</span><span class="sc0">
+    
+        </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">Cinemex</span><span class="sc0"> </span><span class="sc5">drop</span><span class="sc0"> </span><span class="sc5">primary</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">;</span><span class="sc0"> </span><span class="sc10">(</span><span class="sc11">marcar</span><span class="sc0">á </span><span class="sc11">error</span><span class="sc10">).</span><span class="sc0">
+        
+    </span><span class="sc4">8.2</span><span class="sc0"> </span><span class="sc11">Eliminar</span><span class="sc0"> </span><span class="sc11">FK</span><span class="sc0"> </span><span class="sc11">con</span><span class="sc0"> </span><span class="sc11">las</span><span class="sc0"> </span><span class="sc11">que</span><span class="sc0"> </span><span class="sc11">se</span><span class="sc0"> </span><span class="sc11">relacionan</span><span class="sc0">
+    
+        </span><span class="sc11">show</span><span class="sc0"> </span><span class="sc5">create</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc10">;</span><span class="sc0">  </span><span class="sc10">(</span><span class="sc11">idCinemex</span><span class="sc0"> </span><span class="sc11">es</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">FK</span><span class="sc0"> </span><span class="sc11">con</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">que</span><span class="sc0"> </span><span class="sc11">se</span><span class="sc0"> </span><span class="sc11">hace</span><span class="sc0"> </span><span class="sc11">referencia</span><span class="sc10">)</span><span class="sc0">
+        
+        </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc0"> </span><span class="sc5">drop</span><span class="sc0"> </span><span class="sc5">foreign</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc0"> </span><span class="sc11">gerente_ibfk_1</span><span class="sc10">;</span><span class="sc0">
+        
+        </span><span class="sc11">Verificar</span><span class="sc0"> </span><span class="sc10">:</span><span class="sc0"> </span><span class="sc11">show</span><span class="sc0"> </span><span class="sc5">create</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc10">;</span><span class="sc0">
+        
+        </span><span class="sc5">desc</span><span class="sc0"> </span><span class="sc11">ec</span><span class="sc10">;</span><span class="sc0">  
+        </span><span class="sc11">show</span><span class="sc0"> </span><span class="sc5">create</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">ec</span><span class="sc10">;</span><span class="sc0">   </span><span class="sc10">//</span><span class="sc11">escogemos</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">FK</span><span class="sc0"> </span><span class="sc11">que</span><span class="sc0"> </span><span class="sc11">hace</span><span class="sc0"> </span><span class="sc11">referencia</span><span class="sc0"> </span><span class="sc11">a</span><span class="sc0"> </span><span class="sc11">idCinemex</span><span class="sc0">
+        </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">ec</span><span class="sc0"> </span><span class="sc5">drop</span><span class="sc0"> </span><span class="sc5">foreign</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc0"> </span><span class="sc11">ec_ibfk_2</span><span class="sc10">;</span><span class="sc0">
+        
+        </span><span class="sc11">Verificar</span><span class="sc0"> </span><span class="sc10">:</span><span class="sc0"> </span><span class="sc11">show</span><span class="sc0"> </span><span class="sc5">create</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">ec</span><span class="sc10">;</span><span class="sc0">
+    
+    </span><span class="sc4">8.3</span><span class="sc0"> </span><span class="sc11">Eliminar</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">PK</span><span class="sc0"> </span><span class="sc11">ahora</span><span class="sc0"> </span><span class="sc11">si</span><span class="sc0">
+    
+        </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">Cinemex</span><span class="sc0"> </span><span class="sc5">drop</span><span class="sc0"> </span><span class="sc5">primary</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">;</span><span class="sc0">
+        
+    </span><span class="sc4">8.4</span><span class="sc0"> </span><span class="sc11">Redefinir</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">PK</span><span class="sc10">.</span><span class="sc0">
+        
+        </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">cinemex</span><span class="sc0"> </span><span class="sc5">add</span><span class="sc0"> </span><span class="sc5">primary</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">(</span><span class="sc11">idCinemex</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">nombre</span><span class="sc10">);</span><span class="sc0">
+        
+    </span><span class="sc4">8.5</span><span class="sc0"> </span><span class="sc11">Asociarlo</span><span class="sc0"> </span><span class="sc11">con</span><span class="sc0"> </span><span class="sc11">el</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc10">.</span><span class="sc0">
+        </span><span class="sc4">8.5.1</span><span class="sc0">   </span><span class="sc11">agregar</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">sucursal</span><span class="sc0">
+        
+                </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc0"> </span><span class="sc5">add</span><span class="sc0"> </span><span class="sc5">column</span><span class="sc0"> </span><span class="sc11">nomCine</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">50</span><span class="sc10">);</span><span class="sc0">
+                
+    </span><span class="sc4">8.6</span><span class="sc0"> </span><span class="sc11">Asociarlo</span><span class="sc0"> </span><span class="sc11">con</span><span class="sc0"> </span><span class="sc11">ec</span><span class="sc10">.</span><span class="sc0">
+        </span><span class="sc4">8.6.1</span><span class="sc0">   </span><span class="sc11">agregar</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">sucursal</span><span class="sc0">
+                
+                </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">ec</span><span class="sc0"> </span><span class="sc5">add</span><span class="sc0"> </span><span class="sc5">column</span><span class="sc0"> </span><span class="sc11">nomCine</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">50</span><span class="sc10">);</span><span class="sc0">
+                
+                </span><span class="sc10">//</span><span class="sc11">La</span><span class="sc0"> </span><span class="sc5">variable</span><span class="sc0"> </span><span class="sc11">nomCine</span><span class="sc0"> </span><span class="sc11">debe</span><span class="sc0"> </span><span class="sc11">tener</span><span class="sc0"> </span><span class="sc11">el</span><span class="sc0"> </span><span class="sc11">mismo</span><span class="sc0"> </span><span class="sc11">tipo</span><span class="sc0">
+                  </span><span class="sc11">de</span><span class="sc0"> </span><span class="sc11">dato</span><span class="sc0"> </span><span class="sc11">con</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">misma</span><span class="sc0"> </span><span class="sc11">cantidad</span><span class="sc0"> </span><span class="sc11">para</span><span class="sc0"> </span><span class="sc11">que</span><span class="sc0"> </span><span class="sc5">no</span><span class="sc0"> </span><span class="sc11">haya</span><span class="sc0">
+                  </span><span class="sc11">complicaciones</span><span class="sc0"> </span><span class="sc11">en</span><span class="sc0"> </span><span class="sc11">las</span><span class="sc0"> </span><span class="sc11">consultas</span><span class="sc10">.</span><span class="sc0">
+                
+    </span><span class="sc4">8.7</span><span class="sc0"> </span><span class="sc11">Haremos</span><span class="sc0"> </span><span class="sc11">una</span><span class="sc0"> </span><span class="sc11">llave</span><span class="sc0"> </span><span class="sc11">foranea</span><span class="sc0"> </span><span class="sc11">compuesta</span><span class="sc0"> </span><span class="sc11">entre</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc0"> </span><span class="sc11">y</span><span class="sc0"> </span><span class="sc11">ec</span><span class="sc10">;</span><span class="sc0">
+        </span><span class="sc4">8.7.1</span><span class="sc0">   </span><span class="sc11">Agregar</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">llave</span><span class="sc0"> </span><span class="sc11">foranea</span><span class="sc0"> </span><span class="sc11">sobre</span><span class="sc0"> </span><span class="sc11">cinemex</span><span class="sc0"> </span><span class="sc11">de</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc0"> </span><span class="sc11">y</span><span class="sc0"> </span><span class="sc11">ec</span><span class="sc10">.</span><span class="sc0">
+        
+                </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc0"> </span><span class="sc5">add</span><span class="sc0"> </span><span class="sc5">foreign</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">(</span><span class="sc11">idCinemex</span><span class="sc10">,</span><span class="sc11">nomCine</span><span class="sc10">)</span><span class="sc0">
+                </span><span class="sc5">references</span><span class="sc0"> </span><span class="sc11">cinemex</span><span class="sc10">(</span><span class="sc11">idCinemex</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">nombre</span><span class="sc10">)</span><span class="sc0">
+                </span><span class="sc5">on</span><span class="sc0"> </span><span class="sc5">delete</span><span class="sc0"> </span><span class="sc5">cascade</span><span class="sc0"> </span><span class="sc5">on</span><span class="sc0"> </span><span class="sc5">update</span><span class="sc0"> </span><span class="sc5">cascade</span><span class="sc10">;</span><span class="sc0">
+                
+                </span><span class="sc11">La</span><span class="sc0"> </span><span class="sc11">llave</span><span class="sc0"> </span><span class="sc11">primaria</span><span class="sc0"> </span><span class="sc11">es</span><span class="sc0"> </span><span class="sc11">a</span><span class="sc0"> </span><span class="sc11">quien</span><span class="sc0"> </span><span class="sc11">se</span><span class="sc0"> </span><span class="sc11">hace</span><span class="sc0"> </span><span class="sc11">referencia</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">en</span><span class="sc0"> </span><span class="sc11">donde</span><span class="sc0"> </span><span class="sc11">debe</span><span class="sc0">
+                </span><span class="sc11">de</span><span class="sc0"> </span><span class="sc11">ser</span><span class="sc0"> </span><span class="sc11">el</span><span class="sc0"> </span><span class="sc11">mismo</span><span class="sc0"> </span><span class="sc11">tipo</span><span class="sc0"> </span><span class="sc11">de</span><span class="sc0"> </span><span class="sc11">dato</span><span class="sc10">.</span><span class="sc0">
+                
+                </span><span class="sc11">Verificar</span><span class="sc10">:</span><span class="sc0">  </span><span class="sc5">desc</span><span class="sc0"> </span><span class="sc11">gerente</span><span class="sc10">;</span><span class="sc0">
+                            </span><span class="sc11">show</span><span class="sc0"> </span><span class="sc5">create</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc10">;</span><span class="sc0">
+                
+                </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">ec</span><span class="sc0"> </span><span class="sc5">add</span><span class="sc0"> </span><span class="sc5">foreign</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">(</span><span class="sc11">idCinemex</span><span class="sc10">,</span><span class="sc11">nomCine</span><span class="sc10">)</span><span class="sc0">
+                </span><span class="sc5">references</span><span class="sc0"> </span><span class="sc11">cinemex</span><span class="sc10">(</span><span class="sc11">idCinemex</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">nombre</span><span class="sc10">)</span><span class="sc0">
+                </span><span class="sc5">on</span><span class="sc0"> </span><span class="sc5">delete</span><span class="sc0"> </span><span class="sc5">cascade</span><span class="sc0"> </span><span class="sc5">on</span><span class="sc0"> </span><span class="sc5">update</span><span class="sc0"> </span><span class="sc5">cascade</span><span class="sc10">;</span><span class="sc0">
+    
+    </span><span class="sc4">8.8</span><span class="sc0"> </span><span class="sc11">Crear</span><span class="sc0"> </span><span class="sc11">la</span><span class="sc0"> </span><span class="sc11">relacion</span><span class="sc0"> </span><span class="sc11">cartelera</span><span class="sc0">
+        </span><span class="sc11">cartelera</span><span class="sc10">(</span><span class="sc0">
+            </span><span class="sc11">idCartelera</span><span class="sc10">,</span><span class="sc11">nombre</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">fechaInicio</span><span class="sc10">,</span><span class="sc11">fechaFin</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc11">clasificacion</span><span class="sc10">)</span><span class="sc0">
+            
+                </span><span class="sc5">create</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">cartelera</span><span class="sc10">(</span><span class="sc0">
+                    </span><span class="sc11">idCartelera</span><span class="sc0"> </span><span class="sc5">int</span><span class="sc0"> </span><span class="sc5">not</span><span class="sc0"> </span><span class="sc5">null</span><span class="sc0"> </span><span class="sc5">primary</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">,</span><span class="sc0">
+                    </span><span class="sc11">nombre</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">50</span><span class="sc10">),</span><span class="sc0">
+                    </span><span class="sc11">fechaInicio</span><span class="sc0"> </span><span class="sc5">date</span><span class="sc10">,</span><span class="sc0">
+                    </span><span class="sc11">fechaFin</span><span class="sc0"> </span><span class="sc5">date</span><span class="sc10">,</span><span class="sc0">
+                    </span><span class="sc11">clasificacion</span><span class="sc0"> </span><span class="sc5">varchar</span><span class="sc10">(</span><span class="sc4">4</span><span class="sc10">)</span><span class="sc0">
+                </span><span class="sc10">);</span><span class="sc0">
+            
+            </span><span class="sc11">Verificar</span><span class="sc10">:</span><span class="sc0">  </span><span class="sc5">desc</span><span class="sc0"> </span><span class="sc11">Cartelera</span><span class="sc10">;</span><span class="sc0">
+                        
+                
+    </span><span class="sc4">8.9</span><span class="sc0"> </span><span class="sc11">Asociarla</span><span class="sc0"> </span><span class="sc11">con</span><span class="sc0"> </span><span class="sc11">Cinemex</span><span class="sc0">
+            </span><span class="sc11">cinemex</span><span class="sc10">(</span><span class="sc11">idCinemex</span><span class="sc10">,</span><span class="sc0"> </span><span class="sc10">......,</span><span class="sc0"> </span><span class="sc11">FK</span><span class="sc10">(</span><span class="sc11">idCartelera</span><span class="sc10">));</span><span class="sc0">
+            
+            </span><span class="sc5">desc</span><span class="sc0"> </span><span class="sc11">Cinemex</span><span class="sc10">;</span><span class="sc0">
+            
+            </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">cinemex</span><span class="sc0"> </span><span class="sc5">add</span><span class="sc0"> </span><span class="sc5">column</span><span class="sc0"> </span><span class="sc11">idCartelera</span><span class="sc0"> </span><span class="sc5">int</span><span class="sc10">;</span><span class="sc0">
+            
+            </span><span class="sc5">alter</span><span class="sc0"> </span><span class="sc5">table</span><span class="sc0"> </span><span class="sc11">cinemex</span><span class="sc0"> </span><span class="sc5">add</span><span class="sc0"> </span><span class="sc5">foreign</span><span class="sc0"> </span><span class="sc5">key</span><span class="sc10">(</span><span class="sc11">idCartelera</span><span class="sc10">)</span><span class="sc0"> </span><span class="sc5">references</span><span class="sc0"> </span><span class="sc11">cartelera</span><span class="sc10">(</span><span class="sc11">idCartelera</span><span class="sc10">)</span><span class="sc0">
+            </span><span class="sc5">on</span><span class="sc0"> </span><span class="sc5">delete</span><span class="sc0"> </span><span class="sc5">cascade</span><span class="sc0"> </span><span class="sc5">on</span><span class="sc0"> </span><span class="sc5">update</span><span class="sc0"> </span><span class="sc5">cascade</span><span class="sc10">;</span><span class="sc0">
+            
+            
+    
+</span><span class="sc11">______________</span><span class="sc0">
+
+    </span><span class="sc11">RESPALDO</span><span class="sc0"> </span><span class="sc11">PARA</span><span class="sc0"> </span><span class="sc11">UNA</span><span class="sc0"> </span><span class="sc11">BD</span><span class="sc10">:</span><span class="sc0">
+        </span><span class="sc11">Entrar</span><span class="sc0"> </span><span class="sc11">a</span><span class="sc0"> </span><span class="sc11">Archivos</span><span class="sc0"> </span><span class="sc11">de</span><span class="sc0"> </span><span class="sc11">programa</span><span class="sc10">/</span><span class="sc11">mySQL</span><span class="sc10">/</span><span class="sc11">mySQLServer</span><span class="sc0"> </span><span class="sc4">5.7</span><span class="sc10">/</span><span class="sc5">bin</span><span class="sc0">
+        </span><span class="sc11">mysqldump</span><span class="sc0"> </span><span class="sc10">-</span><span class="sc11">v</span><span class="sc0"> </span><span class="sc11">root</span><span class="sc0"> </span><span class="sc10">-</span><span class="sc11">p</span><span class="sc0"> </span><span class="sc11">nombreBD</span><span class="sc0"> </span><span class="sc10">&gt;</span><span class="sc0"> </span><span class="sc5">path</span><span class="sc10">:</span><span class="sc0">\</span><span class="sc11">archivo</span><span class="sc10">.</span><span class="sc11">sq</span><span class="sc0">     </span><span class="sc10">-&gt;</span><span class="sc0"> </span><span class="sc11">Cuando</span><span class="sc0"> </span><span class="sc11">una</span><span class="sc0"> </span><span class="sc11">maquina</span><span class="sc0"> </span><span class="sc5">no</span><span class="sc0"> </span><span class="sc11">puede</span><span class="sc0"> </span><span class="sc11">conectarse</span><span class="sc0">
+    </span></div></body>
+</html>
